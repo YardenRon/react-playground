@@ -5,7 +5,7 @@ export const ThemeContext = React.createContext('light');
 const ContextComponent = () => {
     return (
         <ThemeContext.Provider value="dark">
-            <div className="parentContainer">
+            <div className="parent-container">
                 <ParentComponent />
             </div>
         </ThemeContext.Provider>
@@ -14,7 +14,7 @@ const ContextComponent = () => {
 
 const ParentComponent = () => {
     return (
-        <div className="childContainer">
+        <div className="child-container">
             <ChildComponent />
         </div>
     );
