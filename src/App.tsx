@@ -1,17 +1,16 @@
 import React from 'react';
-import './app.css';
+import './app.scss';
 import DynamicSelect from './dynamic-select';
+import { ComponentsList } from './config';
+
+interface AppState {
+  selectedComponent: keyof typeof ComponentsList
+}
 
 class App extends React.Component {
 
-  components = {
-    "HelloComponent": null,
-    "TestComponent": null,
-    "ContextComponent": null
-  };
-
-  state = {
-    selectedComponent: ""
+  state: AppState = {
+    selectedComponent: "HelloComponent"
   };
 
   onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -21,15 +20,15 @@ class App extends React.Component {
   };
 
   render() {
-    const Component = this.state.selectedComponent;
+    const Component = ComponentsList[this.state.selectedComponent];
 
     return (
       <div className="app">
-        <div className="pickerContainer">
-          <DynamicSelect componentsNames={Object.keys(this.components)} handleChange={this.onSelectChange} />
+        <div className="picker-container">
+          <DynamicSelect componentsNames={Object.keys(ComponentsList)} handleChange={this.onSelectChange} />
         </div>
-        <div className="componentContainer">
-          {/* <Component /> */}
+        <div className="component-container">
+          <Component />
         </div>
       </div>
     );

@@ -1,0 +1,23 @@
+.app {
+  height: 100%;
+  width: 100%;
+
+  .picker-container {
+    height: 9%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid black 1px;
+    // background-color: blue;
+  }
+
+  .component-container {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: red;
+  }
+}
