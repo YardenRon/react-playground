@@ -2,3 +2,13 @@
   height: 100%;
   width: 100%;
 }
+
+.pickerContainer {
+  height: 10%;
+  width: 100%;
+}
+
+.componentContainer {
+  height: 90%;
+  width: 100%;
+}
